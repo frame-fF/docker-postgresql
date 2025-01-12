@@ -1,6 +1,6 @@
 services:
 
-  postgresql:
+  postgresql16:
     container_name : postgresql-16
     build: 
       context: .
