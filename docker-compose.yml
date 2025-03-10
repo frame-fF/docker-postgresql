@@ -17,7 +17,7 @@ services:
       POSTGRES_MAINTAINANCE_WORK_MEM: 128MB
     volumes:
       - data:/var/lib/postgresql/data/
-    command: postgres -c 'max_connections=999'
+    command: postgres -c 'max_connections=999' -c 'default_toast_compression=lz4'
 
 volumes:
   data:
