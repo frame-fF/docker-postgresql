@@ -1,7 +1,7 @@
 services:
 
   postgresql:
-    container_name : postgresql-16
+    container_name : postgresql
     build: 
       context: .
       dockerfile: Dockerfile
