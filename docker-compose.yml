@@ -15,7 +15,7 @@ services:
       POSTGRES_EFFECTIVE_CACHE_SIZE: 2GB
       POSTGRES_SHARED_BUFFERS: 1GB
       POSTGRES_WORK_MEM: 50MB
-      POSTGRES_MAINTAINANCE_WORK_MEM: 128MB
+      POSTGRES_MAINTENANCE_WORK_MEM: 128MB
     volumes:
       - data:/var/lib/postgresql/data/
     command: postgres -c 'max_connections=999' -c 'default_toast_compression=lz4' -c 'shared_preload_libraries=timescaledb'
