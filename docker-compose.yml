@@ -23,6 +23,7 @@ services:
       -c 'shared_buffers=1GB'
       -c 'work_mem=50MB'
       -c 'maintenance_work_mem=128MB'
+      -c 'effective_io_concurrency=200'
 
 volumes:
   data:
