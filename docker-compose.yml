@@ -5,6 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    shm_size: 1g
     restart: always
     ports:
       - 5432:5432
