@@ -5,16 +5,16 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    shm_size: 1g
+    shm_size: 2g
     restart: always
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      # POSTGRES_DB: postgres
     volumes:
-      - data:/var/lib/postgresql/data/
+      - data:/var/lib/postgresql
     command: |
       postgres
       -c 'max_connections=999'
@@ -23,7 +23,7 @@ services:
       -c 'effective_cache_size=4GB'
       -c 'shared_buffers=1GB'
       -c 'work_mem=50MB'
-      -c 'maintenance_work_mem=128MB'
+      -c 'maintenance_work_mem=256MB'
       -c 'effective_io_concurrency=200'
       -c 'random_page_cost=1.1'
       -c 'cpu_tuple_cost=0.03'
