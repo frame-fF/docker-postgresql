@@ -17,7 +17,7 @@ services:
       - data:/var/lib/postgresql
     command: |
       postgres
-      -c 'max_connections=999'
+      -c 'max_connections=100'
       -c 'default_toast_compression=lz4'
       -c 'shared_preload_libraries=timescaledb'
       -c 'effective_cache_size=4GB'
@@ -27,6 +27,7 @@ services:
       -c 'effective_io_concurrency=200'
       -c 'random_page_cost=1.1'
       -c 'cpu_tuple_cost=0.03'
+      -c 'max_worker_processes=16'
 
 volumes:
   data:
