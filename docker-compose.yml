@@ -21,7 +21,7 @@ services:
       -c 'default_toast_compression=lz4'
       -c 'shared_preload_libraries=timescaledb'
       -c 'effective_cache_size=4GB'
-      -c 'shared_buffers=1GB'
+      -c 'shared_buffers=2GB'
       -c 'work_mem=50MB'
       -c 'maintenance_work_mem=256MB'
       -c 'effective_io_concurrency=200'
